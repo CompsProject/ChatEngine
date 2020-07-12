@@ -3,7 +3,7 @@
 }
 
 #bodyDiv {
-	position: absolute;
+	/* position: absolute; */
 	height: 87%;
 	width: 100%;
 	overflow-x: hidden;
@@ -104,6 +104,12 @@ border-color
 h1 {
 	font-size: 250%;
 	font-weight: bold;
+	
+}
+
+groupName{
+	margin-left: 25px;
+	float: left;
 }
 
 .offLeftDiv {
@@ -154,12 +160,27 @@ h1 {
 	position: absolute;
 	padding: 0.5em 1em;
 	margin: 0.5em 1em;
-	width: 700px;
+/* 	width: 700px; */
+	width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 
 #chatDiv {
 	position: absolute;
 	width: 100%;
+	display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+}
+
+#windowsDiv{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 h2 {
@@ -223,12 +244,17 @@ div::-webkit-resizer {
 	float: left;
 	min-width: 430px;
 	position: relative;
+	display:flex; 
+	flex-direction:column;
+	margin: 0px 5px 20px 35px;
 }
 
 #answerWindow {
 	background-color: rgba(200, 0, 00, 0.7);
 	float: left;
+	display: initial;
 	margin: 0px 5px 0px 35px;
+	margin-bottom: 30px;
 }
 
 #alertButtonDiv {
