@@ -5,12 +5,30 @@ h2 {
 }
 
 #bodyDiv {
-	margin: 0 10px;
-	position: relative;
+	/* margin: 0 10px; */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: auto;
+    /* box-sizing: border-box; */
+    justify-content: center;
+    align-items: center;
+}
+
+#bodyDiv>*{
+	flex: 1 1 310px;
+    margin: 10px 10px 20px 10px;
 }
 
 #headerDiv {
 	background-color: rebeccapurple;
+}
+
+.flex-title{
+	display: flex;
+	flex-wrap: wrap;
 }
 
 input, select {
