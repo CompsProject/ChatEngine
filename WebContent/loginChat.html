@@ -29,18 +29,30 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 </head>
-<body>
+<body style="overflow-x: hidden;">
 	<!-- <div style="display:flex; flex-direction:column"> -->
 	<div id="headerDiv">
-		<div id="webSocketGfx">
+		<div id="webSocketGfx" style="justify-self: flex-start;">
 			<div id="clientGfx" class="circleBase"></div>
 			<div id="serverGfx" class="circleBase"></div>
 			<div id="pingGfx" class="circleBase ping"></div>
+			
 		</div>
 
-		<h2>
-			Login <span style="float: right; top: 30px">COMPS</span>
-		</h2>
+		<div style="justify-self: flex-start;">
+			<h2>
+				Login 
+			</h2>
+		</div>
+	
+		<div style="justify-self: center;">
+			<h2 id='groupName' style="color: snow;">Group X</h2>
+		</div>
+	
+		<div style="justify-self: flex-end;">
+			<h2>COMPS</h2>
+		</div>
+		
 
 	</div>
 
@@ -167,7 +179,7 @@
 
 			<div>
 				<button id="back_InfoBtn" class="blueBtn">◀ Info</button>
-				<h1 id='groupName' style="">Group X</h1>
+				<!-- <h3 id='groupName' style="color: forestgreen;">Group X</h3> -->
 			</div>
 
 			<div>

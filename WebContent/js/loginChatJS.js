@@ -64,8 +64,6 @@ util_openSocket(); //open the webSocket
 		
 		//clear chat window for reconnect
 		$(".chatConsole p").remove(); //remove all messages
-		
-		
 	};
 
 	Chat.socket.onclose = function() {
@@ -92,6 +90,18 @@ util_openSocket(); //open the webSocket
 		var messageNode = xmlDoc.getElementsByTagName('message')[0];
 		var messageType = messageNode.getAttribute('type');
 
+		// var ansWinTextBoolean = messageNode.getAttribute('ansWinFlag');
+			
+		// 	//alert(ansWinTextBoolean);
+			
+		// 	if (ansWinTextBoolean == "true") {
+		// 		showAnswerWindow = true;
+		
+		// 	} else {
+		// 		showAnswerWindow = false;
+		
+		// 	}
+		// 	hideAnswerDiv();
 		// Capture non chat related messages here
 		
 		if (messageType == 'permIDSet' || messageType == 'permIDConfirm') {
@@ -140,9 +150,13 @@ util_openSocket(); //open the webSocket
 			//successful login, go to info page
 			//SetReset = true;
 			
-			refreshAnswerWindowStatus();			
-			changePanel();			
+
+			refreshAnswerWindowStatus();
 			hideAnswerDiv();
+		
+						
+			changePanel();			
+			
 			return;
 		} else if (messageType == 'goToChat') {
 			//during reconnect, force to chat window
@@ -449,8 +463,10 @@ util_openSocket(); //open the webSocket
 			
 			if (ansWinTextBoolean == "true") {
 				showAnswerWindow = true;
+		
 			} else {
 				showAnswerWindow = false;
+		
 			}
 			
 			hideAnswerDiv();
@@ -694,10 +710,14 @@ function hideAnswerDiv() {
 	if (showAnswerWindow == false) {
 		$("#answerWindow").css("display","none");
 		$("#alertButtonDiv").css("display","initial");
+		
+		
+		$("back_InfoBtn").css("display", "none");
 		//alert("hid answer window");
 	} else {
 		$("#alertButtonDiv").css("display","none");
 		$("#answerWindow").css("display","initial");
+		$("back_InfoBtn").css("display", "initial");
 		//alert("revealed answer window");
 	}
 }
@@ -712,28 +732,42 @@ function refreshAnswerWindowStatus() {
 
 function changePanel () {
 //	console.log("swappedPanels "+swapPanel);
-	if (swapPanel==0) {
+	console.log(showAnswerWindow);
+	if (swapPanel==0 && showAnswerWindow == true) {
 		$("#loginDiv").removeClass("centerDiv").addClass("offLeftDiv");
 		$("#infoDiv").removeClass("offRightDiv").addClass("centerDiv");
 		$("#chatDiv").removeClass().addClass("offRightDiv");
 		$("#sidebar").css("opacity", "1");
-		$("#bodyDiv").css("overflow-y", "scroll");
+		$("#bodyDiv").css("overflow-y", "auto");
 		$("#bodyDiv").animate({scrollTop: 0}, "slow");
 		swapPanel = 1;
+		console.log(swapPanel);
+	}else if (swapPanel==0 && showAnswerWindow == false) {
+		$("#loginDiv").removeClass("centerDiv").addClass("offLeftDiv");
+		$("#chatDiv").removeClass("offRightDiv").addClass("centerDiv");
+		$("#bodyDiv").css("overflow-y", "auto");
+		$("#infoDiv").css("display", "none");
+		$("#groupName").css("visibility", "visible");
+		$("#bodyDiv").animate({scrollTop: 0}, "slow");
+		console.log(swapPanel);
 	} else if (swapPanel==1) {
 		$("#infoDiv").removeClass("centerDiv").addClass("offLeftDiv");
 		$("#chatDiv").removeClass("offRightDiv").addClass("centerDiv");
-		$("#bodyDiv").css("overflow-y", "hidden");
+		$("#bodyDiv").css("overflow-y", "auto");
+		$("#groupName").css("visibility", "visible");
 //		$("#bodyDiv")[0].scrollTo(0,0);
 		$("#bodyDiv").animate({scrollTop: 0}, "slow");
 		swapPanel = 2;
+		console.log(swapPanel);
 	} else {
 //		$("#loginDiv").removeClass().addClass("centerDiv");
 		$("#infoDiv").removeClass().addClass("centerDiv");
 		$("#chatDiv").removeClass().addClass("offRightDiv");
-		$("#bodyDiv").css("overflow-y", "scroll");
+		$("#bodyDiv").css("overflow-y", "auto");
+		$("#groupName").css("visibility", "hidden");
 		$("#bodyDiv").animate({scrollTop: 0}, "slow");
 		swapPanel = 1;
+		console.log(swapPanel);
 	}
 }
 

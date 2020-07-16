@@ -28,11 +28,11 @@
   <br/>
   
   
-  <p style="font-size:80%; padding:5px">Hover over a <span class="highlight">Yellow</span> label to see information about it</p>
   <div id="bodyDiv">
     
     <div>
-    
+	<p style="font-size:80%; padding:5px">Hover over a <span class="highlight">Yellow</span> label to see information about it</p>
+
     <div id="createSetDiv" style="max-width: 350px; margin: 0px auto;">
     	<h1 class="sectionName">Create A New Set</h1>
     	<div id="firstDivRow" class="divRow">
@@ -88,6 +88,28 @@ For example, you can name a Set (set of groups) 'Lab_3_Wed'. ">
     		
     		
 		</div>
+		<div id="answerWindowDiv" class="divRow">
+    		<div class="leftF halfDiv">
+			<label title="Unheck this box to disable the answer window">
+    			<h3 class="yellow">Answer Window:</h3>
+    			
+    		</label>
+    		</div>
+    		<div class="rightF halfDiv">
+    		<input id="answerWindowCheck" type="checkbox" onclick="sendAnswerWindowStatus();" checked>
+    		</div>
+		</div>
+		<div id="alertTADiv" class="divRow">
+    		<div class="leftF halfDiv">
+			<label title="Unheck this box to disable the alertTA option">
+    			<h3 class="yellow">Alert TA:</h3>
+    			
+    		</label>
+    		</div>
+    		<div class="rightF halfDiv">
+    		<input id="alertTACheck" type="checkbox" onclick="sendAlertTAStatus();" checked>
+    		</div>
+    	</div>
 		<div id="thirdDivRow" class="">
 			
 			<button id="createBtn" disabled>Create Set</button>
@@ -103,17 +125,7 @@ For example, you can name a Set (set of groups) 'Lab_3_Wed'. ">
     	<h1 class="sectionName">Current Set</h1>
     	<p id="serverStatus">Waiting for server info</p>
     	
-    	<div id="answerWindowDiv" class="divRow">
-    		<div class="leftF halfDiv">
-			<label title="Unheck this box to disable the answer window">
-    			<h3>Answer Window:</h3>
-    			
-    		</label>
-    		</div>
-    		<div class="rightF halfDiv">
-    		<input id="answerWindowCheck" type="checkbox" onclick="sendAnswerWindowStatus();" checked>
-    		</div>
-    	</div>
+    	
     	
     	<div id="firstDivRow2" class="divRow">
     		<div class="halfDiv leftF">

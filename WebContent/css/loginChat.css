@@ -1,10 +1,13 @@
 #headerDiv {
 	background-color: forestgreen;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 #bodyDiv {
-	/* position: absolute; */
-	height: 87%;
+	position: absolute;
+	height: 80%;
 	width: 100%;
 	overflow-x: hidden;
 	overflow-y: hidden;
@@ -107,9 +110,10 @@ h1 {
 	
 }
 
-groupName{
-	margin-left: 25px;
-	float: left;
+#groupName{
+	/* margin-left: 25px;
+	float: left; */
+	visibility: hidden;
 }
 
 .offLeftDiv {

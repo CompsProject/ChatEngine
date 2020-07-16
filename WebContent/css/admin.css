@@ -13,12 +13,12 @@ h2 {
     width: 95%;
     margin: auto;
     /* box-sizing: border-box; */
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+  
 }
 
 #bodyDiv>*{
-	flex: 1 1 310px;
+	flex: 1 1 500px;
     margin: 10px 10px 20px 10px;
 }
 
